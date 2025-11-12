@@ -15,9 +15,28 @@
   </header>
   <h1>S.H.I.E.L.D WANTED LIST</h1>
   <div class="bar"></div>
-  <input id="search-input" type="text" placeholder="Search by name or reason..." />
+  <div class="controls">
+    <input id="search-input" type="text" placeholder="Search by name or reason..." />
+    <div class="sort-controls">
+      <label for="sort-select">Sort by</label>
+      <select id="sort-select">
+        <option value="createdAt">Newest</option>
+        <option value="name">Name</option>
+        <option value="reason">Reason</option>
+        <option value="ranking">Ranking</option>
+      </select>
+      <button id="sort-toggle" aria-label="Toggle sort direction">⬆</button>
+    </div>
+  </div>
+
+  <div id="ranking-legend" class="legend">
+    <span class="badge low">Low</span>
+    <span class="badge moderate">Moderate</span>
+    <span class="badge high">High</span>
+  </div>
   <ul id="wanted-list">
     <li>Loading wanted list...</li>
   </ul>
+  <div id="explanation-panel" aria-live="polite"></div>
 </body>
 </html>

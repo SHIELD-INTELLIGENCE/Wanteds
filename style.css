@@ -64,6 +64,40 @@ h1 {
   box-shadow: 0 0 10px var(--shield-glow);
 }
 
+.controls {
+  max-width: 900px;
+  margin: 0 auto 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.sort-controls {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  color: var(--shield-white);
+}
+
+.sort-controls select {
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: #0f0f0f;
+  color: var(--shield-white);
+  border: 1px solid var(--shield-accent);
+}
+
+.sort-controls button {
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: transparent;
+  border: 1px solid var(--shield-accent);
+  color: var(--shield-accent);
+  cursor: pointer;
+}
+
 #wanted-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -87,6 +121,27 @@ h1 {
   transform: translateY(10px);
   animation: fadeInUp 0.4s forwards;
 }
+
+.wanted-item { cursor: pointer; transition: transform 0.12s ease, box-shadow 0.12s ease; }
+.wanted-item:hover { transform: translateY(-4px); box-shadow: 0 6px 16px rgba(0,0,0,0.4); }
+.wanted-item.selected { outline: 2px solid rgba(202,169,76,0.22); }
+
+.card-head { display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:6px; }
+.badge { padding: 6px 10px; border-radius: 999px; font-weight:700; font-size:0.85rem; }
+.badge.low { background: rgba(80, 175, 104, 0.12); color: #bfe8bf; border: 1px solid rgba(80,175,104,0.25); }
+.badge.moderate { background: rgba(250, 200, 80, 0.08); color: #f6e09b; border: 1px solid rgba(202,169,76,0.25); }
+.badge.high { background: rgba(220, 80, 80, 0.08); color: #f6b2b2; border: 1px solid rgba(220,80,80,0.2); }
+
+.reason { color: #ddd; font-size:0.95rem; }
+
+#ranking-legend { max-width: 900px; margin: 0.75rem auto 1.5rem; display:flex; gap:12px; align-items:center; justify-content:center; flex-wrap:wrap; }
+.legend-text { color: #cfcfcf; font-size:0.9rem; margin-left:8px; }
+
+#explanation-panel { max-width: 900px; margin: 2rem auto; text-align:left; }
+.explanation-card { background: rgba(255,255,255,0.02); padding: 1rem; border-radius: 8px; border: 1px solid rgba(202,169,76,0.08); }
+.ex-head { display:flex; align-items:center; justify-content:space-between; margin-bottom:6px; }
+.ex-reason { color:#ddd; margin-bottom:8px; }
+.ex-text { color:#cfcfcf; font-size:0.95rem; }
 
 @keyframes fadeInUp {
   to {
